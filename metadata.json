@@ -1,0 +1,10 @@
+{
+  "name": "Cão Meu Amigo Adestramento",
+  "description": "Blog profissional premium de adestramento de cães e comportamento canino por André Frohlich. Especialistas em Novo Hamburgo, São Leopoldo, Estância Velha e Sapiranga.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

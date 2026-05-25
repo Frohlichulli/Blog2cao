@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Cambria, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Editorial Aesthetic Colors */
+  --color-gold-base: #D4AF37;
+  --color-gold-light: #F4E4B5;
+  --color-gold-dark: #A1801F;
+  --color-brand-petroleum: #004B63;
+  --color-brand-petroleum-dark: #002D3B;
+  --color-brand-teal: #0087AB;
+  --color-matte-black: #0A0A0A;
+  --color-graphite-dark: #121212;
+  --color-graphite-light: #1E1E1E;
+}
+
+/* Base custom overrides with Editorial style */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-matte-black);
+    color: #F3F4F6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom scrollbar to keep layout premium and matching the gold highlights */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-matte-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-base);
+}
+
+/* Animations and utilities */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.03);
+  }
+}
+
+.ambient-overlay {
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E8C4 50%, #A1801F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-border {
+  border-image: linear-gradient(to right, #A1801F, #D4AF37, #A1801F) 1;
+}
+
+/* Glassmorphism panel styling mapped to Editorial design standards */
+.premium-glass {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.premium-glass:hover {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.cinema-shadow {
+  box-shadow: 0 10px 45px -15px rgba(0, 0, 0, 0.95), 0 0 1px 1px rgba(212, 175, 55, 0.05);
+}
+
+/* For realistic SEO view */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
